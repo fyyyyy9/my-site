@@ -1,30 +1,28 @@
-# 
-
-项目编号: 7530910170965999891
-
-本项目是由 [网站开发专家](https://space.coze.cn/) 创建.
-
-[**项目地址**](https://space.coze.cn/task/7530910170965999891)
-
-## 本地开发
-
-### 环境准备
-
-- 安装 [Node.js](https://nodejs.org/en)
-- 安装 [pnpm](https://pnpm.io/installation)
-
 ### 操作步骤
 
 - 安装依赖
 
 ```sh
-pnpm install
+npm install
 ```
 
 - 启动 Dev Server
 
 ```sh
-pnpm run dev
+npm run dev
 ```
 
 - 在浏览器访问 http://localhost:3000
+
+````sh
+npm run build
+打包到 dist 目录
+
+```sh
+npm run deploy
+部署到 gh-pages
+````
+
+
+
+访问路径：https://fyyyyy9.github.io/my-site/

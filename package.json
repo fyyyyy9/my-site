@@ -6,7 +6,7 @@
   "scripts": {
     "dev:client": "vite --host --port 3000",
     "dev": "pnpm dev:client",
-    "build:client": "vite build --outDir dist/static",
+    "build:client": "vite build --base=/my-site/ --outDir dist",
     "build": "rimraf dist && pnpm build:client && ncp package.json dist && node -e \"require('fs').writeFileSync('dist/build.flag', '')\"",
     "deploy": "gh-pages -d dist"
   },
