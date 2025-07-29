@@ -3,7 +3,10 @@ import "./header.scss";
 export default function Header() {
   return (
     <div className="header wrapper">
-      <img src={logo} alt="fyy" />
+      <div className="flex flex-middle">
+        <img src={logo} alt="fyy" />
+        <h2>finefish@foxmail.com</h2>
+      </div>
     </div>
   );
 }
