@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import LandingPage from "@/pages/LandingPage";
+import Home from "@/pages/Home";
 import ResumePage from "@/pages/ResumePage";
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/resume" element={<ResumePage />} />
       </Routes>
     </AnimatePresence>

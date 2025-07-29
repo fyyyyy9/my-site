@@ -1,4 +1,9 @@
-// 此文件已被重命名为 LandingPage.tsx
-export default function Home() {
-  return null;
+import SoldierAni from "./components/SoldierAni";
+
+export default function HomePage() {
+  return (
+    <div className="relative min-h-screen w-full overflow-hidden">
+      <SoldierAni />
+    </div>
+  );
 }
