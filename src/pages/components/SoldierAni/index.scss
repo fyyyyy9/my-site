@@ -1,0 +1,23 @@
+.soldier-ani {
+  position: relative;
+  .first,
+  .second {
+    position: absolute;
+  }
+  .first {
+    top: 45%;
+    right: 0;
+  }
+  .second {
+    top: 50%;
+    left: 0;
+  }
+  .content {
+    color: var(--baseColor);
+    h1 {
+      font-size: var(--posterTextSize);
+      line-height: 100%;
+      text-align: center;
+    }
+  }
+}
