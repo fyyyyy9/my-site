@@ -5,8 +5,10 @@ import "./home.scss";
 export default function HomePage() {
   return (
     <section className="home relative min-h-screen w-full overflow-hidden">
-      <Header />
-      <SoldierAni />
+      <div className="top">
+        <Header />
+        <SoldierAni />
+      </div>
       <ImgList />
     </section>
   );

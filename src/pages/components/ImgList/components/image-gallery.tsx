@@ -6,6 +6,7 @@ interface ImageData {
   url: string;
   category: string;
   title: string;
+  objectType: string;
 }
 
 // 预加载所有图片
@@ -56,14 +57,12 @@ const ImageGallery: React.FC<{ imageData: ImageData[] }> = ({ imageData }) => {
   // 如果没有图片
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-      </div>
+      <div className="flex justify-center items-center wrapper">图片不见了</div>
     );
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="list-content wrapper">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">动态图片画廊</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
@@ -100,18 +99,18 @@ const ImageGallery: React.FC<{ imageData: ImageData[] }> = ({ imageData }) => {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm-grid-cols-2 md-grid-cols-3 lg-grid-cols-4  card-gap">
           {filteredImages.map((img, index) => (
             <div
               key={`${img.data.category}-${img.data.url}-${index}`}
-              className="bg-white rounded-xl shadow-md overflow-hidden transform transition-transform hover:scale-[1.03] hover:shadow-xl"
+              className="list-item"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className={`list-item-img ${img.data.objectType}`}>
                 {img.src ? (
                   <img
                     src={img.src}
                     alt={img.data.title}
-                    className="w-full h-full object-cover"
+                    className=""
                     loading="lazy"
                     onError={(e) => {
                       e.currentTarget.src =
@@ -119,17 +118,15 @@ const ImageGallery: React.FC<{ imageData: ImageData[] }> = ({ imageData }) => {
                     }}
                   />
                 ) : (
-                  <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-500">图片未找到</span>
+                  <div className="flex items-center justify-center">
+                    <span className="">图片未找到</span>
                   </div>
                 )}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h3 className="text-white font-bold text-lg truncate">
-                    {img.data.title}
-                  </h3>
-                </div>
               </div>
-              <div className="p-4">
+              <div className="list-item-text">
+                <h3 className="text-white font-bold text-lg truncate">
+                  {img.data.title}
+                </h3>
                 <div className="flex justify-between items-center">
                   <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
                     {img.data.category}

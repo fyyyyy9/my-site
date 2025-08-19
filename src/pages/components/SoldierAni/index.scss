@@ -1,6 +1,6 @@
 .soldier-ani {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 100px);
   .first,
   .second {
     position: absolute;
