@@ -104,6 +104,8 @@ const ImageGallery: React.FC<{ imageData: ImageData[] }> = ({ imageData }) => {
             <div
               key={`${img.data.category}-${img.data.url}-${index}`}
               className="list-item"
+              data-aos="zoom-in-left"
+              data-aos-delay={`${index * 200}`}
             >
               <div className={`list-item-img ${img.data.objectType}`}>
                 {img.src ? (
